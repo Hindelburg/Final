@@ -12,7 +12,7 @@ CREATE TABLE Seller(
 
 
 CREATE TABLE Item(
-	id			int NOT NULL,
+	id			int IDENTITY NOT NULL,
 	iName		varchar(100) NOT NULL,
 	descript	varchar(230) NOT NULL,
 	sellerID	int			 NOT NULL,
@@ -42,13 +42,13 @@ INSERT INTO dbo.Seller(sName) VALUES
 	('Pearl Greene')
 GO
 
-INSERT INTO dbo.Item(id, iName, descript, sellerID) VALUES
-	(1001, 'Abraham Lincoln Hammer', 'A bench mallet fashioned from a broken rail-splitting maul in 1829 and owned by Abraham Lincoln', 3),
-	(1002, 'Albert Einsteins Telescope', 'A brass telescope owned by Albert Einstein in Germany, circa 1927', 1),
-	(1003, 'Bob Dylan Love Poems', 'Five versions of an original unpublished, handwritten, love poem by Bob Dylan', 2)
+INSERT INTO dbo.Item(iName, descript, sellerID) VALUES
+	('Abraham Lincoln Hammer', 'A bench mallet fashioned from a broken rail-splitting maul in 1829 and owned by Abraham Lincoln', 3),
+	('Albert Einsteins Telescope', 'A brass telescope owned by Albert Einstein in Germany, circa 1927', 1),
+	('Bob Dylan Love Poems', 'Five versions of an original unpublished, handwritten, love poem by Bob Dylan', 2)
 GO
 
 INSERT INTO dbo.Bid(itemID, buyerID, price, timeOffered) VALUES
-	(1001, 3, 250000, '12/04/2017 09:04:22'),
-	(1003, 1, 95000, '12/04/2017 08:44:03')
+	(1, 3, 250000, '12/04/2017 09:04:22'),
+	(3, 1, 95000, '12/04/2017 08:44:03')
 GO
